@@ -1,27 +1,60 @@
-# FrontendService
+Afficher les produits :
+La page principale affiche la liste complète des produits disponibles.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+Chercher les produits :
+Un mécanisme de recherche permet aux utilisateurs de trouver rapidement des produits spécifiques.
 
-## Development server
+Pagination :
+La liste des produits est paginée pour améliorer la convivialité lorsque la liste est étendue.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Supprimer un produit :
+Les utilisateurs peuvent supprimer des produits de la liste.
 
-## Code scaffolding
+Éditer un produit :
+Fonctionnalité d'édition permettant de modifier les détails d'un produit existant.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Mettre à jour un produit :
+Possibilité de mettre à jour les informations d'un produit, y compris le prix, la quantité, etc.
 
-## Build
+Authentification :
+Système d'authentification pour sécuriser l'accès aux fonctionnalités de gestion des produits.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Protection des routes :
+Certaines fonctionnalités sont accessibles uniquement après l'authentification, assurant la sécurité des opérations sensibles.
 
-## Running unit tests
+Consul Discovery :
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Utilisé pour la découverte des services dans un environnement distribué.
+Permet aux microservices de s'enregistrer et de découvrir d'autres services.
+Spring Cloud Config :
 
-## Running end-to-end tests
+Gère la configuration centralisée des microservices.
+Fournit un moyen de stocker et de récupérer la configuration des applications.
+Spring Cloud Gateway :
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Agit en tant que passerelle pour rediriger le trafic vers les microservices appropriés.
+Gère le routage et peut implémenter des fonctionnalités telles que l'équilibrage de charge.
+Customer Service :
 
-## Further help
+Gère les informations relatives aux clients, telles que les détails personnels.
+Peut gérer la création, la modification et la suppression des informations client.
+Inventory Service :
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Gère les informations sur les stocks de produits.
+Permet de consulter les niveaux de stock et de mettre à jour les quantités disponibles.
+Order Service :
+
+Gère le processus de création et de gestion des commandes.
+Peut impliquer la vérification des stocks, la gestion des paiements, etc.
+Consul Config (Billing Service) :
+
+Utilisé pour configurer le service de facturation.
+Peut stocker des informations de configuration spécifiques au service de facturation.
+Vault (Billing Service) :
+
+Utilisé pour la gestion des secrets et des informations sensibles dans le service de facturation.
+Assure la sécurité des données sensibles comme les clés d'API, les mots de passe, etc.
+Frontend Web avec Angular :
+
+Interface utilisateur développée en Angular pour interagir avec les microservices.
+Permet aux utilisateurs de parcourir les produits.
